@@ -44,3 +44,21 @@
   background-color: #f8af26;
   color: white;
 }
+
+
+.buttondelete button {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid orange;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+}
+
+.buttondelete button:hover,
+.buttondelete button:active {
+  background-color: orange;
+  border-color: orange;
+  color: white;
+}

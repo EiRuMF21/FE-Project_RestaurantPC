@@ -18,7 +18,15 @@ const Cart = (props) => {
   };
 
   const cartItemDeleteHandler = (id) => {
-    cartCtx.deleteItem(id);
+    // Tampilkan konfirmasi alert sebelum menghapus item
+    const isConfirmed = window.confirm(
+      "Are you sure you want to delete this item?"
+    );
+
+    // Jika pengguna mengonfirmasi, baru hapus item
+    if (isConfirmed) {
+      cartCtx.deleteItem(id);
+    }
   };
 
   const cartItemAddHandler = (item) => {
@@ -64,6 +72,9 @@ const Cart = (props) => {
                 Order
               </button>
             )}
+          </div>
+          <div className={classes.buttondelete}>
+          <button className={classes.button} onClick={() => cartItemDeleteHandler()}>Delete</button>
           </div>
         </>
       ) : (
